@@ -56,7 +56,14 @@ class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin {
 
   List<Widget> renderChildren() {
     return [
-      HomeScreen(number: number, threshold: threshold),
+      AnimatedSwitcher(
+        duration: const Duration(milliseconds: 500),
+        child: HomeScreen(
+          key: ValueKey<int>(number), // 여기에 ValueKey 추가
+          number: number,
+          threshold: threshold,
+        ),
+      ),
       SettingScreen(threshold: threshold, onThresholdChange: onThresholdChange)
     ];
   }
