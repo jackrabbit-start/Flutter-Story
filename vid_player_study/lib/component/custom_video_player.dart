@@ -164,6 +164,7 @@ class _CustomVideoPlayerState extends State<CustomVideoPlayer> {
     if (videoController!.value.isPlaying) {
       videoController!.pause();
     } else {
+      videoController!.setPlaybackSpeed(2.0);
       videoController!.play();
     }
   }
